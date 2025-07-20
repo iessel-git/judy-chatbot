@@ -1,34 +1,35 @@
 import { useState } from "react";
 
 export default function Home() {
-  const [messages, setMessages] = useState<{ role: string; content: string }[]>([]);
+  const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
 
   const sendMessage = async () => {
-    if (!input.trim()) return;
+    if (!input) return;
     const userMessage = { role: "user", content: input };
-    setMessages((prev) => [...prev, userMessage]);
+    setMessages([...messages, userMessage]);
 
-    try {
-      const res = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: input })
-      });
+    const res = await fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: input }),
+    });
 
-      const data = await res.json();
-      const botMessage = { role: "assistant", content: data.reply };
-      setMessages((prev) => [...prev, botMessage]);
-    } catch (error) {
-      const botMessage = { role: "assistant", content: "Error: Unable to connect to the server." };
-      setMessages((prev) => [...prev, botMessage]);
-    }
-
+    const data = await res.json();
+    const botMessage = { role: "assistant", content: data.reply };
+    setMessages((m) => [...m, botMessage]);
     setInput("");
   };
 
   return (
-    <main style={{ maxWidth: "600px", margin: "auto", fontFamily: "sans-serif" }}>
+    <main
+      style={{
+        maxWidth: "600px",
+        margin: "auto",
+        fontFamily: "sans-serif",
+        padding: "1rem",
+      }}
+    >
       <h2>Hi, I am Judy – your Assistant 🤖</h2>
       <div
         style={{
@@ -36,7 +37,7 @@ export default function Home() {
           padding: "10px",
           height: "300px",
           overflowY: "auto",
-          marginBottom: "10px",
+          marginBottom: "1rem",
         }}
       >
         {messages.map((m, i) => (
@@ -52,7 +53,7 @@ export default function Home() {
         onKeyDown={(e) => e.key === "Enter" && sendMessage()}
         placeholder="Type your message..."
       />
-      <button style={{ padding: "8px 12px", marginLeft: "5px" }} onClick={sendMessage}>
+      <button style={{ padding: "8px 12px", marginLeft: "10px" }} onClick={sendMessage}>
         Send
       </button>
     </main>
