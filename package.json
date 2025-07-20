@@ -1,5 +1,5 @@
 {
-  "name": "judy-basic-chat",
+  "name": "judy-chatbot",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -14,4 +14,3 @@
     "openai": "^4.0.0"
   }
 }
-
