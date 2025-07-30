@@ -24,7 +24,7 @@ export default async function handler(req, res) {
   "what amenities are included in the rooms": "Our rooms include air conditioning, smart TVs, mini bars, en-suite bathrooms, and luxury toiletries.",
   "do you have a swimming pool": "Yes, we have a clean, modern swimming pool available for guest use.",
   "is breakfast included in the room rate": "Yes, a complimentary breakfast is included with every room booking.",
-  "do you have a spa or wellness center": "A full-service spa and wellness center is available for massages, facials, and relaxation treatments.",
+  "do you have a spa or wellness center": "A full-service spa and wellness center is available for massages, facials, and relaxation.",
   "can i host a business meeting at rose tavern": "Absolutely, we have fully equipped meeting rooms and boardrooms for business functions.",
   "do you offer laundry services": "Yes, we offer same-day laundry and dry cleaning services for all guests.",
   "is the hotel family-friendly": "Yes, Rose Tavern is family-friendly and offers amenities for children and families.",
