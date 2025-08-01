@@ -33,7 +33,7 @@ export default async function handler(req, res) {
   "can i check in early or check out late": "Early check-in and late check-out are available upon request and subject to availability.",
   "how far is rose tavern from the airport": "We are approximately 30 minutes from Kotoka International Airport, depending on traffic.",
   "is the hotel suitable for honeymoon stays": "Yes, we offer romantic honeymoon packages and private suite options for newlyweds.",
-  "can i cancel or modify my reservation": "Yes, cancellations or modifications are allowed per our booking policy. Please see our website or contact the front desk for details.",
+  "can i cancel or modify my reservation": "Yes, cancellations or modifications are allowed per our booking policy. Please check our website or contact the front desk for details.",
   "do you offer discounts for group bookings": "Yes, we provide discounts for group bookings, corporate stays, and long-term reservations. Contact us for a custom quote.",
   "how do i contact the front desk": "You can call us directly at the number listed on our Contact page or use the website's chat support."
 }:
